@@ -35,7 +35,8 @@ export const Register = () => {
                 email: '',
                 address: '',
                 password: ''
-            })
+            });
+            navigate('/')
           })
           .catch(function (error) {
             console.log(error);
