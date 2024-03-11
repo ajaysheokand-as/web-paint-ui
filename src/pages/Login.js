@@ -6,6 +6,8 @@ import axios from 'axios';
 
 
 export const Login = () => {
+    const apiURL = "https://web-paint-backend.onrender.com";
+
     const navigate = useNavigate();
    const [data, setData] = useState({email: "", password: "",});
    const handleOnChange = (e) => {
@@ -14,7 +16,7 @@ export const Login = () => {
    }
    const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:4040/login',data)
+    axios.post(`${apiURL}/login`,data)
     .then(function (response) {
         console.log(response);
         if(response.status === 200){

@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 
 export const Register = () => {
+    const apiURL = "https://web-paint-backend.onrender.com";
+
     const navigate = useNavigate();
 
     const [labelRegister, setLabelRegister] = useState("Register");
@@ -24,7 +26,7 @@ export const Register = () => {
     const handleSubmit = (e) => {
         setLabelRegister('Processing...');
         e.preventDefault();
-        axios.post('http://localhost:4040/user',data)
+        axios.post(`${apiURL}/user`,data)
           .then(function (response) {
             console.log(response);
             alert('Registered Successfully');

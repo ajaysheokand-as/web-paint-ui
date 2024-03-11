@@ -16,9 +16,11 @@ export default function Dashboard() {
     setLoadUser(true);
   }
   const getAllUsers = async () => {
+    const apiURL = "https://web-paint-backend.onrender.com";
+
     console.log("allUsers=>",allUsers);
     await axios
-    .get("http://localhost:4040/user")
+    .get(`${apiURL}/user`)
     .then(function (response) {
       console.log("allUser response =>",response);
       if (response.status === 200) {

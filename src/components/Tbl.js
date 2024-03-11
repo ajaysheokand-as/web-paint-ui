@@ -3,11 +3,12 @@ import Table from "react-bootstrap/Table";
 import axios from 'axios';
 
 export const Tbl = (props) => {
-  console.log("props=>",props);
+//   console.log("props=>",props);
+const apiURL = "https://web-paint-backend.onrender.com";
   const deleteUser = (email) => {
     // e.preventDefault();
     // console.log("email=>",email);
-    axios.post('http://localhost:4040/delete', {email})
+    axios.post(`${apiURL}/delete`, {email})
       .then(function (response) {
         console.log(response);
         alert('User Deleted Successfully');
